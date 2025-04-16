@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Manager Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <header>
+            <h2>Welcome to File Manager</h2>
+            <button id="logoutButton" onclick="logout()">Logout</button>
+        </header>
+
+        <section class="upload-section">
+            <h3>Upload File</h3>
+            <input type="file" id="fileInput" />
+            <button id="uploadButton" onclick="uploadFile()">Upload</button>
+        </section>
+
+        <section class="file-section">
+            <h3>Uploaded Files</h3>
+            <table id="fileTable">
+                <tr>
+                    <th>Filename</th>
+                    <th>Actions</th>
+                </tr>
+                <!-- Files will be listed here dynamically -->
+            </table>
+        </section>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
