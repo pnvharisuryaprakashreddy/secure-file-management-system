@@ -54,6 +54,20 @@ All data is stored in the browser using `localStorage` (no backend server requir
 
 ---
 
+### Screenshots
+
+#### Auth (Sign up / Sign in)
+
+![Login and sign-up screen](screenshots/login-signup.png)
+
+#### Dashboard (empty state)
+
+![Dashboard with no files yet](screenshots/dashboard-empty.png)
+
+#### Dashboard (with a file + download)
+
+![Dashboard showing uploaded file and download/delete actions](screenshots/dashboard-with-file.png)
+
 ### How to Run Locally
 
 1. **Clone the repository**
