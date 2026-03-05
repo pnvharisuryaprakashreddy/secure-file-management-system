@@ -1,35 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Manager Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="dashboard-body">
     <div class="dashboard-container">
-        <header>
-            <h2>Welcome to File Manager</h2>
-            <button id="logoutButton" onclick="logout()">Logout</button>
+        <header class="dashboard-header">
+            <div>
+                <h2>Secure File Manager</h2>
+                <p class="dashboard-subtitle">
+                    Upload, view, and manage your files in one place.
+                    <span class="dashboard-user" id="currentUserContainer" style="display: none;">
+                        · Signed in as <span id="currentUser"></span>
+                    </span>
+                </p>
+            </div>
+            <button id="logoutButton" class="secondary-button" onclick="logout()">Logout</button>
         </header>
 
-        <section class="upload-section">
-            <h3>Upload File</h3>
-            <input type="file" id="fileInput" />
-            <button id="uploadButton" onclick="uploadFile()">Upload</button>
-        </section>
+        <div id="notification" class="notification" aria-live="polite"></div>
 
-        <section class="file-section">
-            <h3>Uploaded Files</h3>
-            <table id="fileTable">
-                <tr>
-                    <th>Filename</th>
-                    <th>Actions</th>
-                </tr>
-                <!-- Files will be listed here dynamically -->
-            </table>
-        </section>
+        <main class="dashboard-main">
+            <section class="upload-section card">
+                <h3>Upload a file</h3>
+                <p class="section-subtitle">Choose a file from your device and keep it handy here.</p>
+                <div class="upload-controls">
+                    <input type="file" id="fileInput" />
+                    <button id="uploadButton" onclick="uploadFile()">Upload</button>
+                </div>
+            </section>
+
+            <section class="file-section card">
+                <div class="file-section-header">
+                    <div>
+                        <h3>Your files</h3>
+                        <p class="section-subtitle">All files you have uploaded in this browser.</p>
+                    </div>
+                    <span class="file-count" id="fileCountBadge">0 files</span>
+                </div>
+                <table id="fileTable">
+                    <tr>
+                        <th>Filename</th>
+                        <th>Actions</th>
+                    </tr>
+                    <!-- Files will be listed here dynamically -->
+                </table>
+            </section>
+        </main>
     </div>
     <script src="scripts.js"></script>
 </body>
